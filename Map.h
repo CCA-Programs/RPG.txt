@@ -1,6 +1,9 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include<vector>
+using namespace std;
+
 //Last modified by Todd Selwitz
 
 //This header file defines the map that the character traverses.
@@ -16,11 +19,14 @@
 //TRAP has a one-time hazard (could be level dependent)
 //ENEMY starts an "enemy" event
 
-enum state <EMPTY, OK, WALL, DOOR, WATER, LAVA, TRAP, ENEMY>	//Types of floor tiles ("OK" means 
+enum FLOOR_STATE {EMPTY, OK, WALL, DOOR, WATER, LAVA, TRAP, ENEMY}	//Types of floor tiles ("OK" means 
 								//the tile is walkable and has no traps
 
 class Map{
 	private:
-	vector<vector <int> > map;			//holds all positions on the map.
-	int character_pos;				//holds the character location	
-};	
+	vector <vector<int> > map;			//holds all positions on the map.
+	
+	int character_pos;			        	//holds the character location	
+};
+
+#endif	
